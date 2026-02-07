@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Propose Day ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(#ff9a9e,#fad0c4);
+  font-family:'Segoe UI', sans-serif;
+  overflow:hidden;
+}
+
+/* Falling Roses */
+.rose{
+  position:fixed;
+  top:-10%;
+  font-size:22px;
+  animation:fall linear infinite;
+  opacity:0.8;
+}
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(360deg);
+  }
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-radius:22px;
+  text-align:center;
+  width:330px;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  z-index:2;
+}
+
+h1{
+  color:#e6005c;
+  margin-bottom:5px;
+}
+
+.name{
+  font-size:14px;
+  color:#777;
+  letter-spacing:1px;
+  margin-bottom:15px;
+}
+
+.scene{
+  position:relative;
+  height:140px;
+  margin:20px 0;
+}
+
+.boy{
+  position:absolute;
+  left:90px;
+  bottom:0;
+  animation:bow 2.5s infinite alternate;
+}
+
+.girl{
+  position:absolute;
+  right:60px;
+  bottom:0;
+}
+
+.emoji{
+  font-size:55px;
+}
+
+.rose-hand{
+  font-size:30px;
+}
+
+@keyframes bow{
+  from{transform:translateY(0);}
+  to{transform:translateY(6px);}
+}
+
+.text{
+  font-size:16px;
+  line-height:1.6;
+  color:#333;
+  min-height:120px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Falling roses -->
+<script>
+for(let i=0;i<18;i++){
+  let r=document.createElement("div");
+  r.className="rose";
+  r.innerHTML="🌹";
+  r.style.left=Math.random()*100+"vw";
+  r.style.animationDuration=5+Math.random()*5+"s";
+  r.style.fontSize=18+Math.random()*12+"px";
+  document.body.appendChild(r);
+}
+</script>
+
+<div class="card">
+  <h1>Happy Propose Day</h1>
+  <div class="name">for Moume</div>
+
+  <div class="scene">
+    <div class="boy">
+      <div class="emoji">🧎‍♂️</div>
+      <div class="rose-hand">🌹</div>
+    </div>
+    <div class="girl emoji">🧍‍♀️</div>
+  </div>
+
+  <div class="text" id="typing"></div>
+</div>
+
+<script>
+const message = 
+"I don’t believe in perfect moments,\n" +
+"I believe in real feelings.\n\n" +
+"Moume, you came into my life quietly,\n" +
+"and somehow became the loudest part of my heart.\n\n" +
+"This rose isn’t a question,\n" +
+"it’s a promise.";
+
+let i=0;
+function type(){
+  if(i<message.length){
+    document.getElementById("typing").innerHTML +=
+      message[i]==="\n" ? "<br>" : message[i];
+    i++;
+    setTimeout(type,45);
+  }
+}
+type();
+</script>
+
+</body>
+</html>
